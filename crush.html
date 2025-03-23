@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love, SNEHA</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Lora', serif;
+            background: linear-gradient(135deg, #fff0f5, #ffe6f0);
+            color: #555;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #e91e63;
+            margin: 50px 0 30px;
+            font-weight: 700;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+            animation: floatTitle 3s ease-in-out infinite; /* Floating animation */
+        }
+
+        @keyframes floatTitle {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px); /* Move up slightly */
+            }
+        }
+
+        p {
+            font-size: 1.15rem;
+            margin: 0 auto 30px;
+            max-width: 650px;
+            padding: 0 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        /* Gallery Styles */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 50px 0;
+            padding: 0 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button Styles */
+        .button {
+            background: linear-gradient(135deg, #ffb6c1, #ff9db5);
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #ff9db5, #ff82a3);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* List Styles */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 30px auto 50px;
+            max-width: 650px;
+        }
+
+        ul li {
+            font-size: 1.1rem;
+            margin: 18px 0;
+            padding: 15px 20px;
+            background-color: rgba(233, 30, 99, 0.08);
+            border-radius: 12px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+            border-left: 3px solid #e91e63;
+            position: relative;
+            padding-left: 35px;
+        }
+
+        ul li::before {
+            content: '❤️';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #e91e63;
+            font-size: 1.2rem;
+        }
+
+        ul li:hover {
+            background-color: rgba(233, 30, 99, 0.15);
+        }
+
+        /* Footer Styles */
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            background-color: rgba(233, 30, 99, 0.05);
+            color: #e91e63;
+            font-size: 0.95rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer::before {
+            content: '❤️';
+            color: #e91e63;
+            font-size: 1rem;
+        }
+
+        /* Feature Styles */
+        .feature {
+            margin: 50px 0;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 18px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+            border: 1px solid rgba(233, 30, 99, 0.1);
+        }
+
+        .feature:hover {
+            border-color: rgba(233, 30, 99, 0.3);
+        }
+
+        .feature h2 {
+            font-size: 2.2rem;
+            color: #e91e63;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* Scroll Animations */
+        .animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Hearts Animation */
+        .floating-hearts-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            color: #e91e63;
+            font-size: 1.5rem;
+            position: absolute;
+            animation: floatHeart 7s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translate(var(--start-x), var(--start-y)) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.8;
+            }
+            80% {
+                transform: translate(var(--end-x), var(--end-y)) rotate(360deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(var(--end-x), var(--end-y)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            ul li {
+                font-size: 1rem;
+            }
+            .gallery img {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            ul li {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Container -->
+    <div class="floating-hearts-container" id="floatingHearts"></div>
+
+    <div class="container">
+        <h1 id="title">For My Love, SNEHA</h1>
+        <p id="intro">Hey love, this website is just for you. You mean the world to me, and I wanted to create something special to show you how much I care.</p>
+
+        <!-- Gallery -->
+        <div class="gallery" id="gallery">
+            <img src="photo1.jpg" alt="Our Photo 1">
+            <img src="photo2.jpg" alt="Our Photo 2">
+            <img src="photo3.jpg" alt="Our Photo 3">
+        </div>
+
+        <!-- Reasons I Love You -->
+        <p id="reasons">Here are just a few reasons why I love you:</p>
+        <ul id="list">
+            <li>Your eyes</li>
+            <li>Your voice</li>
+            <li>You are soooo beautiful</li>
+            <li>Shy shy cute face</li>
+            <li>You make me laugh every day.</li>
+            <li>Your kindness inspires me.</li>
+            <li>You’re my best friend and my soulmate.</li>
+        </ul>
+
+        <!-- Closing Message -->
+        <p id="closing">Thank you for being you. I can’t wait to create more memories together.</p>
+        <p id="signature" style="font-style: italic; font-size: 1.1rem; margin-top: 30px;">Forever yours, pagal adami</p>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        Made with ❤️ by your Love
+    </footer>
+
+    <script>
+        // JavaScript for Scroll Animations
+        const elements = [
+            document.getElementById('title'),
+            document.getElementById('intro'),
+            ...document.querySelectorAll('.gallery img'),
+            document.getElementById('reasons'),
+            ...document.querySelectorAll('ul li'),
+            document.getElementById('closing'),
+            document.getElementById('signature'),
+            document.getElementById('footer')
+        ];
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Floating Hearts Animation
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+
+            // Random start and end positions
+            const startX = Math.random() * 100; // Random horizontal start position
+            const startY = Math.random() * 100; // Random vertical start position
+            const endX = Math.random() * 100; // Random horizontal end position
+            const endY = Math.random() * 100; // Random vertical end position
+
+            heart.style.setProperty('--start-x', `${startX}vw`);
+            heart.style.setProperty('--start-y', `${startY}vh`);
+            heart.style.setProperty('--end-x', `${endX}vw`);
+            heart.style.setProperty('--end-y', `${endY}vh`);
+
+            heart.style.fontSize = `${Math.random() * 1 + 1}rem`;
+            heart.style.opacity = 0;
+
+            const duration = Math.random() * 5 + 5; // Random duration between 5 and 10 seconds
+            heart.style.animationDuration = `${duration}s`;
+
+            const delay = Math.random() * 2; // Random delay
+            heart.style.animationDelay = `-${delay}s`;
+
+            document.getElementById('floatingHearts').appendChild(heart);
+
+            // Remove heart after animation finishes
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000 + delay * 1000);
+        }
+
+        function startFloatingHearts() {
+            setInterval(createFloatingHeart, 1000); // Create a heart every 1 second
+        }
+
+        window.onload = startFloatingHearts;
+    </script>
+</body>
+</html>
